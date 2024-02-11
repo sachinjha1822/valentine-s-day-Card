@@ -1,0 +1,176 @@
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(238, 144, 255);
+}
+
+.book {
+    position: relative;
+    border-radius: 10px;
+    width: 210px;
+    height: 300px;
+    /* Internal Image, upload your couple image here */
+    background-image: url(https://shorturl.at/euzMR);
+    background-size: cover;
+    background-position: center;
+    background-size: 97%;
+    -webkit-box-shadow: 1px 1px 12px black;
+    box-shadow: 1px 1px 12px black;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+}
+
+.cover {
+    top: 0;
+    position: absolute;
+    background-color: lightgray;
+    background-image: linear-gradient( 40deg, rgb(218, 1, 203), black);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-box-shadow: 1px 1px 12px black;
+    box-shadow: 1px 1px 12px black;
+}
+
+.book:hover .cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-85deg);
+    -ms-transform: rotateY(-85deg);
+    transform: rotatey(-95deg);
+}
+
+.heart {
+    position: relative;
+    background-color: #e60303;
+    height: 60px;
+    width: 60px;
+    top: 180px;
+    left: 75px;
+    transform: rotate(-45deg);
+    animation: .8s beat infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    background-color: #e60303;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+}
+
+.heart:before {
+    top: -30px;
+    left: 0;
+}
+
+.heart:after {
+    left: 30px;
+    top: 0;
+}
+
+.smile {
+    position: absolute;
+    width: 30px;
+    height: 15px;
+    background-color: #333;
+    z-index: 1;
+    border-radius: 0 0 100px 100px;
+    top: 200px;
+    left: 90px;
+    overflow: hidden;
+}
+
+.smile:before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #030202;
+    top: 5px;
+    left: 5px;
+}
+
+.eyes {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #333;
+    width: 10px;
+    height: 10px;
+    z-index: 1;
+    top: 185px;
+    left: 120px;
+    box-shadow: -40px 0 #333;
+    transform-origin: 50%;
+    animation: close 2s infinite;
+}
+
+@keyframes close {
+    0%,
+    100% {
+        transform: scale(1, .05);
+    }
+    5%,
+    95% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes beat {
+    0%,
+    40%,
+    100% {
+        transform: scale(1) rotate(-45deg);
+    }
+    25%,
+    60% {
+        transform: scale(1.1) rotate(-45deg);
+    }
+}
+
+.notes {
+    position: absolute;
+    color: #ff9595;
+    font-size: 30px;
+    top: 40px;
+    width: 200px;
+    text-align: center;
+    font-family: 'Protest Revolution', sans-serif;
+}
+
+.notes:before,
+.notes:after {
+    position: absolute;
+    left: 5px;
+    text-align: center;
+    width: 200px;
+}
+
+.notes:before {
+    content: "Valentine's";
+    top: 30px;
+    color: #d04e4e;
+    font-family: 'Protest Riot', sans-serif;
+}
+
+.notes:after {
+    content: "day!";
+    top: 60px;
+    font-family: 'Protest Riot', sans-serif;
+}
